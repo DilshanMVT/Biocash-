@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone_number')->nullable();
             $table->string('status')->nullable();
-            $table->string('role_name')->nullable();
+            $table->string('role_name')->nullable()->default('Normal User');
             $table->string('avatar')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.
