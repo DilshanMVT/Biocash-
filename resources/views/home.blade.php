@@ -20,7 +20,7 @@
             <div class="col-12 col-lg-9">
                 <div class="row">
                     <div class="col-6 col-lg-3 col-md-6">
-                        {{-- <div class="card">
+                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -34,9 +34,9 @@
                                     </div> 
                                 </div>
                             </div>
-                        </div> --}}
+                        </div> 
                     </div>
-                    {{-- <div class="col-6 col-lg-3 col-md-6">
+                    <div class="col-6 col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -52,8 +52,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                    {{-- <div class="col-6 col-lg-3 col-md-6">
+                    </div> 
+                     <div class="col-6 col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -69,8 +69,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                    {{-- <div class="col-6 col-lg-3 col-md-6">
+                    </div> 
+                     <div class="col-6 col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div> 
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-12 col-xl-4">
                         <div class="card">
                             <div class="card-header">
@@ -213,7 +213,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-12 col-lg-3">
                 <div class="card" data-bs-toggle="modal" data-bs-target="#default">
@@ -270,7 +270,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            {{-- <div class="col-md-4">
                                                 <label>Mobile Number</label>
                                             </div>
                                             <div class="col-md-8">
@@ -282,7 +282,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                 
                                             <div class="col-md-4">
                                                 <label>Status</label>
@@ -326,7 +326,7 @@
                 </div>
                 {{-- end user profile modal --}}
 
-                <div class="card">
+                {{-- <div class="card">
                     <div class="card-header">
                         <h4>Recent Messages</h4>
                     </div>
@@ -363,15 +363,15 @@
                                 Conversation</button>
                         </div>
                     </div>
-                </div>
-                <div class="card">
+                </div> --}}
+                {{-- <div class="card">
                     <div class="card-header">
                         <h4>Visitors Profile</h4>
                     </div>
                     <div class="card-body">
                         <div id="chart-visitors-profile"></div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </section>
     </div>
@@ -379,11 +379,11 @@
     <footer>
         <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
+                <p>2024 &copy; BioCash</p>
             </div>
             <div class="float-end">
                 <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
+                href="http://soengsouy.com">Dilshan</a></p>
             </div>
         </div>
     </footer>
