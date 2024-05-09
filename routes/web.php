@@ -8,7 +8,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\LockScreen;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
