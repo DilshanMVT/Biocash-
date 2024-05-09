@@ -54,7 +54,7 @@
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 {{-- start navbar  --}}
       <nav id="navbar" class="navbar">
-      
+
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
@@ -712,24 +712,37 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{{ route('add.inquirie')}}" method="post">
+                @csrf
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
+                  @error('name')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email"  id="email" required>
+                  @error('email')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
+                @error('subject')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
+                @error('message')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -785,9 +798,9 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">Log In</a></li> 
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">Log In</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('register') }}">Register</a></li>
-              
+
             </ul>
           </div>
 

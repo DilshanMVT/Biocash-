@@ -16,7 +16,7 @@ class CreateInquiriesTable extends Migration
         Schema::create('inquiries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->references('id')->on('users')->cascadeOnDelete();
-            $table->text('massage');
+            $table->text('message');
             $table->string('subject')->nullable();
             $table->text('responce')->nullable();
             $table->string('responce_date')->nullable();
