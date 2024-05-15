@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth\LoginController;
@@ -8,7 +9,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\LockScreen;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ use App\Http\Controllers\LockScreen;
 */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -95,3 +96,8 @@ Route::get('form/view/detail', [App\Http\Controllers\FormController::class, 'vie
 Route::get('form/view/detail/{id}', [App\Http\Controllers\FormController::class, 'viewDetail'])->middleware('auth');
 Route::post('form/view/update', [App\Http\Controllers\FormController::class, 'viewUpdate'])->name('form/view/update');
 Route::get('delete/{id}', [App\Http\Controllers\FormController::class, 'viewDelete'])->middleware('auth');
+
+
+Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
+
+Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
