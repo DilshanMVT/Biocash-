@@ -54,7 +54,7 @@
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 {{-- start navbar  --}}
       <nav id="navbar" class="navbar">
-      
+
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
@@ -712,24 +712,37 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{{ route('add.inquirie')}}" method="post">
+                @csrf
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
+                  @error('name')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email"  id="email" required>
+                  @error('email')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
                 <input type="text" class="form-control" name="subject" id="subject" required>
+                @error('subject')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
+                @error('message')
+                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                      @enderror
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -773,7 +786,7 @@
             <p>
               A108 Adam Street <br>
               Galle, GA 535022<br>
-              United States <br><br>
+              Sri Lanka <br><br>
               <strong>Phone:</strong> +94 7505535460<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
@@ -782,28 +795,29 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('login') }}">Log In</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('register') }}">Register</a></li>
+
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Biometric Authentication</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Secure Transactions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Eco-Friendly Solutions</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Instant Transfers</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">24/7 Support</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p>Join our social media community to connect with like-minded individuals, share stories, and discover new opportunities.</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>

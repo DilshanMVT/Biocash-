@@ -47,7 +47,7 @@
                                 <th>Department</th>
                                 <th>Salary</th>
                                 <th class="text-center">Modify</th>
-                            </tr>    
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $key => $item)
@@ -67,7 +67,7 @@
                                         </a>
                                         <a href="{{ url('form/view/detail/'.$item->id) }}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                                        </a>    
+                                        </a>
                                         <a href="{{ url('delete/'.$item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                     </td>
                                 </tr>
@@ -81,11 +81,11 @@
     <footer>
         <div class="footer clearfix mb-0 text-muted ">
             <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
+                <p>2024 &copy; Biocash</p>
             </div>
             <div class="float-end">
                 <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
+                href="http://soengsouy.com">Dilshan</a></p>
             </div>
         </div>
     </footer>
