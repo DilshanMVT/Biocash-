@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InquirieController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth\LoginController;
@@ -29,14 +30,11 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name("login1");
 
-Route::group(['middleware'=>'auth'],function()
-{
-    Route::get('home',function()
-    {
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('home', function () {
         return view('home');
     });
-    Route::get('home',function()
-    {
+    Route::get('home', function () {
         return view('home');
     });
 });
@@ -46,10 +44,18 @@ Route::get('/signout', function () {
     return redirect('/');
 });
 
+
+Route::get('/inter-bank', function () {
+    return view('transactions.inter_bank_transaction');
+})->name("inter.bank");
+
+
+
 Auth::routes();
 
 // ----------------------------- home dashboard ------------------------------//
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home-edit/{id}', [InquirieController::class, 'deleteInquirie'])->name('deleteInquirie');
 
 // -----------------------------login----------------------------------------//
 Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
@@ -101,3 +107,5 @@ Route::get('delete/{id}', [App\Http\Controllers\FormController::class, 'viewDele
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
 
 Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
+
+

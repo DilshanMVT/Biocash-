@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="row">
+                    <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
@@ -217,188 +217,16 @@
                             <thead class="bg-light">
                                 <tr>
                                     <th>Number</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
                                     <th>Subject</th>
+                                    <th>User Type</th>
                                     <th>Actions</th>
                                 </tr>
 
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt=""
-                                                style="width: 45px; height: 45px" class="rounded-circle" />
-                                            <div class="ms-3">
-                                                <p class="fw-bold mb-1">John Doe</p>
-                                                <p class="text-muted mb-0">john.doe@gmail.com</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="fw-normal mb-1">Software engineer</p>
-                                        <p class="text-muted mb-0">IT department</p>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-success rounded-pill d-inline">Active</span>
-                                    </td>
-                                    <td>Senior</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </div>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Inquirie Modal</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
-                                                          <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                                            <input type="text" class="form-control" id="recipient-name">
-                                                          </div>
-                                                          <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Subject:</label>
-                                                            <input type="text" class="form-control" id="Subject-text">
-                                                          </div>
-                                                          <div class="mb-3">
-                                                            <label for="message-text" class="col-form-label">Message:</label>
-                                                            <textarea class="form-control" id="message-text"></textarea>
-                                                          </div>
-                                                        </form>
-                                                      </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Response</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle"
-                                                alt="" style="width: 45px; height: 45px" />
-                                            <div class="ms-3">
-                                                <p class="fw-bold mb-1">Alex Ray</p>
-                                                <p class="text-muted mb-0">alex.ray@gmail.com</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="fw-normal mb-1">Consultant</p>
-                                        <p class="text-muted mb-0">Finance</p>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
-                                    </td>
-                                    <td>Junior</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </div>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Inquirie Modal</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
-                                                          <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                                            <input type="text" class="form-control" id="recipient-name">
-                                                          </div>
-                                                          <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Subject:</label>
-                                                            <input type="text" class="form-control" id="Subject-text">
-                                                          </div>
-                                                          <div class="mb-3">
-                                                            <label for="message-text" class="col-form-label">Message:</label>
-                                                            <textarea class="form-control" id="message-text"></textarea>
-                                                          </div>
-                                                        </form>
-                                                      </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Response</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle"
-                                                alt="" style="width: 45px; height: 45px" />
-                                            <div class="ms-3">
-                                                <p class="fw-bold mb-1">Kate Hunington</p>
-                                                <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="fw-normal mb-1">Designer</p>
-                                        <p class="text-muted mb-0">UI/UX</p>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-                                    </td>
-                                    <td>Senior</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </div>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Inquirie Modal</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
-                                                          <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                                            <input type="text" class="form-control" id="recipient-name">
-                                                          </div>
-                                                          <div class="mb-3">
-                                                            <label for="recipient-name" class="col-form-label">Subject:</label>
-                                                            <input type="text" class="form-control" id="Subject-text">
-                                                          </div>
-                                                          <div class="mb-3">
-                                                            <label for="message-text" class="col-form-label">Message:</label>
-                                                            <textarea class="form-control" id="message-text"></textarea>
-                                                          </div>
-                                                        </form>
-                                                      </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Response</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @foreach ($Inquiries as $inquirie)
+                                    <x-inquirie-table-row :inquirie="$inquirie" />
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
