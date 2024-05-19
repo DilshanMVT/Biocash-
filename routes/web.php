@@ -46,6 +46,13 @@ Route::get('/signout', function () {
     return redirect('/');
 });
 
+
+Route::get('/inter-bank', function () {
+    return view('transactions.inter_bank_transaction');
+})->name("inter.bank");
+
+
+
 Auth::routes();
 
 // ----------------------------- home dashboard ------------------------------//
@@ -101,3 +108,5 @@ Route::get('delete/{id}', [App\Http\Controllers\FormController::class, 'viewDele
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
 
 Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
+
+
