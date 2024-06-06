@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InquirieController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth\LoginController;
@@ -43,12 +44,6 @@ Route::get('/signout', function () {
     Auth::logout();
     return redirect('/');
 });
-
-
-Route::get('/inter-bank', function () {
-    return view('transactions.inter_bank_transaction');
-})->name("inter.bank");
-
 
 
 Auth::routes();
@@ -104,8 +99,15 @@ Route::post('form/view/update', [App\Http\Controllers\FormController::class, 'vi
 Route::get('delete/{id}', [App\Http\Controllers\FormController::class, 'viewDelete'])->middleware('auth');
 
 
+Route::get('/transaction/interbank', [App\Http\Controllers\TransactionController::class, 'interBank'])->name('interBankTransaction');
+Route::get('/transaction/otherbank', [App\Http\Controllers\TransactionController::class, 'otherBank'])->name('otherBankTransaction');
+Route::get('/transaction/billpayment', [App\Http\Controllers\TransactionController::class, 'billPayment'])->name('billPaymentTransaction');
+
+
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
 
 Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
+
+
 
 

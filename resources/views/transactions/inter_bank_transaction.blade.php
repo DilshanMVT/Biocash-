@@ -1,88 +1,174 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
-
-    <div class="container">
-        <form>
-            <div class="input-group mb-3">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>From Account</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
+@extends('layouts.master')
+@section('menu')
+@extends('sidebar.form_staff')
+@endsection
+@section('content')
+<div id="main">
+    <header class="mb-3">
+        <a href="#" class="burger-btn d-block d-xl-none">
+            <i class="bi bi-justify fs-3"></i>
+        </a>
+        {{-- \dfxbfrthrt --}}
+    </header>
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Form Input Information</h3>
+                <p class="text-subtitle text-muted">form information</p>
             </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">To Account</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                    aria-describedby="basic-addon1">
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Form Input</li>
+                    </ol>
+                </nav>
             </div>
+        </div>
+    </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Benificiary Name</span>
-                <input type="text" class="form-control" placeholder="Benificiary Name" aria-label="BName"
-                    aria-describedby="basic-addon1">
+    {{-- message --}}
+    {!! Toastr::message() !!}
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Input Information</h4>
             </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
+                        @csrf
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Full Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control @error('fullName') is-invalid @enderror" value="{{ old('fullName') }}"
+                                                placeholder="Enter full name" id="first-name-icon" name="fullName">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person-check-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"> Brach Name</span>
-                <input type="text" class="form-control" placeholder="BrachName" aria-label="BRName"
-                    aria-describedby="basic-addon1">
-            </div>
+                                <div class="col-md-4">
+                                    <label>Sex</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sex" value="Male" id="male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sex" value="Female" id="male">
+                                        <label class="form-check-label" for="male">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sex" value="Other" id="male">
+                                        <label class="form-check-label" for="male">Other</label>
+                                    </div>
+                                </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"> Transaction Amount</span>
-                <input type="text" class="form-control" placeholder="Transaction Amount" aria-label="TAmount"
-                    aria-describedby="basic-addon1">
-            </div>
+                                <div class="col-md-4">
+                                    <label>Email Address</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="email" class="form-control @error('emailAddress') is-invalid @enderror" value="{{ old('emailAddress') }}"
+                                                placeholder="Enter email" id="first-name-icon" name="emailAddress">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Mobile Number</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="number" class="form-control @error('phone_number') is-invalid @enderror" value="{{ old('phone_number') }}"
+                                                placeholder="Enter phone number" name="phone_number">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-phone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"> phone</span>
-                <input type="text" class="form-control" placeholder="phone Number" aria-label="PNum"
-                    aria-describedby="basic-addon1">
-            </div>
+                                <div class="col-md-4">
+                                    <label>Position</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control @error('position') is-invalid @enderror" value="{{ old('position') }}"
+                                                placeholder="Enter position" name="position">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person-badge-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Departement</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control @error('department') is-invalid @enderror" value="{{ old('department') }}"
+                                                placeholder="Enter departement" name="department">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-shop-window"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="col-md-4">
+                                    <label>Salary</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control @error('salary') is-invalid @enderror" value="{{ old('salary') }}"
+                                                placeholder="Enter salary" name="salary">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Submit
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
+                                    <button type="reset" class="btn btn-light-secondary me-1 mb-1">Cannel</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Confirm</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-</body>
 
-</html>
+    <footer>
+        <div class="footer clearfix mb-0 text-muted">
+            <div class="float-start">
+                <p>2021 &copy; Soeng Souy</p>
+            </div>
+            <div class="float-end">
+                <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                href="http://soengsouy.com">Soeng Souy</a></p>
+            </div>
+        </div>
+    </footer>
+</div>
+@endsection
