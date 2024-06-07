@@ -24,6 +24,8 @@ class User extends Authenticatable
         'email',
         'role_name',
         'password',
+        'nic',
+        'account_no',
     ];
 
     /**
@@ -44,4 +46,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function inquirie()
+    {
+        return $this->hasMany(Inquirie::class);
+    }
 }

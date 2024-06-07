@@ -18,34 +18,32 @@ class RegisterController extends Controller
     }
     public function storeUser(Request $request)
     {
+       // dd($request->all());
+
         $request->validate([
-            'name'      => 'required|string|max:255',
-            'email'     => 'required|string|email|max:255|unique:users',
-            'password'  => 'required|string|min:8|confirmed',
+            'name' => 'required|string|max:255',
+            'nic' => 'required|max:13|min:10',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
         ]);
 
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'role_name' => 'required|string|max:255',
-        //     'email' => 'required|string|email|max:255|unique:users',
-        //     'password' => ['required', 'confirmed', Password::min(8)
-        //             ->mixedCase()
-        //             ->letters()
-        //             ->numbers()
-        //             ->symbols()
-        //             ->uncompromised(),
-        //     'password_confirmation' => 'required',
-        //     ],
-        // ]);
+        // Generate a unique random number
+        do {
+            $randomNumber = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
+        } while (User::where('account_no', $randomNumber)->exists());
 
         User::create([
-            'name'      => $request->name,
-            'avatar'    => $request->image,
-            'email'     => $request->email,
-            'password'  => Hash::make($request->password),
+            'name' => $request->name,
+            'nic' => $request->nic,
+            'account_no' => $randomNumber,
+            'avatar' => $request->image,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
-        Toastr::success('Create new account successfully :)','Success');
-        return redirect('login');
+
+        Toastr::success('Created new account successfully :)', 'Success');
+         return redirect('login');
     }
+
 }

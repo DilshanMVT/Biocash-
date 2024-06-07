@@ -29,12 +29,25 @@
                         <input type="hidden" class="image" name="image" value="photo_defaults.jpg">
 
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-lg @error('email') is-invalid @enderror"
+                            <input type="email" class="form-control form-control-lg @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" placeholder="Enter Your Email">
                             <div class="form-control-icon">
                                 <i class="bi bi-envelope"></i>
                             </div>
                             @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group position-relative has-icon-left mb-4">
+                            <input type="text" class="form-control form-control-lg @error('nic') is-invalid @enderror"
+                                name="nic" value="{{ old('nic') }}" placeholder="Enter Your NIC">
+                            <div class="form-control-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            @error('nic')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

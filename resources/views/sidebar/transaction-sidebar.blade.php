@@ -73,14 +73,12 @@
                         </ul>
                     </li>
                 @endif
-
-                <li class="sidebar-title">Forms &amp; Tables</li>
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item  has-sub active">
+                    <a href="#" class='sidebar-link active'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Transactions</span>
                     </a>
-                    <ul class="submenu">
+                    <ul class="submenu active">
                         <li class="submenu-item">
                             <a href="{{ route('interBankTransaction') }}">Interbank Transactions</a>
                         </li>
@@ -112,7 +110,7 @@
                     </a>
                     <ul class="submenu">
                         <li class="submenu-item">
-                            <a href="{{ route('form/view/detail') }}">Transactions history</a>
+                            <a href="#">Transactions history</a>
                         </li>
                     </ul>
                 </li>
