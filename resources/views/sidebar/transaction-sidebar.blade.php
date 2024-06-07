@@ -14,7 +14,8 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>
-                <li class="sidebar-item active">
+
+                <li class="sidebar-item">
                     <a href="{{ route('home') }}" class='sidebar-link'>
                         <i class="bi bi-house-fill"></i>
                         <span>Dashboard</span>
@@ -37,6 +38,7 @@
                             @endif
                             @if (Auth::user()->role_name == 'Normal User')
                                 <span>Name: <span class="fw-bolder">{{ Auth::user()->name }}</span></span>
+                                <span>Account No: <span class="fw-bolder">{{ Auth::user()->account_no }}</span></span>
                                 <hr>
                                 <span>Role Name:</span>
                                 <span class="badge bg-warning">User Normal</span>
@@ -44,7 +46,6 @@
                         </div>
                     </div>
                 </li>
-
                 {{-- <li class="sidebar-item">
                     <a href="{{ route('change/password') }}" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
@@ -72,33 +73,12 @@
                         </ul>
                     </li>
                 @endif
-
-                @if (Auth::user()->role_name == 'Admin')
-                    <li class="sidebar-title">Page &amp; Controller</li>
-                    <li class="sidebar-item  has-sub">
-                        <a href="#" class='sidebar-link'>
-                            <i class="bi bi-hexagon-fill"></i>
-                            <span>Maintenain</span>
-                        </a>
-                        <ul class="submenu">
-                            <li class="submenu-item">
-                                <a href="{{ route('userManagement') }}">User Control</a>
-                            </li>
-                            <li class="submenu-item">
-                                <a href="{{ route('activity/log') }}">User Activity Log</a>
-                            </li>
-                            <li class="submenu-item">
-                                <a href="{{ route('activity/login/logout') }}">Activity Log</a>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
+                <li class="sidebar-item  has-sub active">
+                    <a href="#" class='sidebar-link active'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>Transactions</span>
                     </a>
-                    <ul class="submenu">
+                    <ul class="submenu active">
                         <li class="submenu-item">
                             <a href="{{ route('interBankTransaction') }}">Interbank Transactions</a>
                         </li>

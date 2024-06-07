@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-@extends('sidebar.form_staff')
+@extends('sidebar.transaction-sidebar')
 @endsection
 @section('content')
 <div id="main">
