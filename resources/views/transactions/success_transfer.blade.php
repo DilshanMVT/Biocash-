@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-{{-- @extends('sidebar.transaction-sidebar') --}}
+    @extends('sidebar.transaction-sidebar')
 @endsection
 @section('content')
     <div id="main">
