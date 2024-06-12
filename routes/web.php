@@ -102,6 +102,8 @@ Route::get('delete/{id}', [App\Http\Controllers\FormController::class, 'viewDele
 Route::get('/transaction/interbank', [App\Http\Controllers\TransactionController::class, 'interBank'])->name('interBankTransaction');
 Route::get('/transaction/otherbank', [App\Http\Controllers\TransactionController::class, 'otherBank'])->name('otherBankTransaction');
 Route::get('/transaction/billpayment', [App\Http\Controllers\TransactionController::class, 'billPayment'])->name('billPaymentTransaction');
+Route::get('/transaction/transfer', [App\Http\Controllers\TransactionController::class, 'transferConfirm'])->name('transferTransaction');
+Route::get('/transaction/success', [App\Http\Controllers\TransactionController::class, 'successTransfer'])->name('successTransaction');
 
 
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
