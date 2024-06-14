@@ -17,4 +17,12 @@ class TransactionController extends Controller
     public function billPayment(){
         return view('transactions.bill_payment');
     }
+    public function transferConfirm(){
+        return view('transactions.transfer_confirm');
+    }
+
+    public function successTransfer(){
+        return view('transactions.success_transfer');
+    }
+
 }

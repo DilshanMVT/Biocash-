@@ -13,8 +13,8 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Form Input Information</h3>
-                <p class="text-subtitle text-muted">form information</p>
+                <h3>Form Input Information </h3>
+                <p class="text-subtitle text-muted">form information / Other Bank Transaction</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -41,14 +41,51 @@
                         @csrf
                         <div class="form-body">
                             <div class="row">
+
                                 <div class="col-md-4">
-                                    <label>Full Name</label>
+                                    <label>Benificiary Name</label>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <input type="text" class="form-control @error('fullName') is-invalid @enderror" value="{{ old('fullName') }}"
-                                                placeholder="Enter full name" id="first-name-icon" name="fullName">
+                                            <input type="text"
+                                                class="form-control @error('BenificiaryName') is-invalid @enderror"
+                                                value="{{ old('BenificiaryName') }}" placeholder="Enter full name"
+                                                id="first-name-icon" name="BenificiaryName">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person-check-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- <div class="col-md-4">
+                                    <label>From Account</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text"
+                                                class="form-control @error('FromAccount') is-invalid @enderror"
+                                                value="{{ old('FromAccount') }}" placeholder="Enter Sender's Account Number"
+                                                id="first-name-icon" name="FromAccount">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person-check-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+
+                                <div class="col-md-4">
+                                    <label>To Account</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text"
+                                                class="form-control @error('ToAccount') is-invalid @enderror"
+                                                value="{{ old('ToAccount') }}" placeholder="Enter Recipient's Account Number"
+                                                id="first-name-icon" name="ToAccount">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person-check-fill"></i>
                                             </div>
@@ -57,24 +94,27 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label>Sex</label>
+                                    <label>Benificiary Bank</label>
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sex" value="Male" id="male">
-                                        <label class="form-check-label" for="male">Male</label>
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Selcet the benificiary bank</option>
+                                                <option value="1">Galle</option>
+                                                <option value="2">Colombo</option>
+                                                <option value="3">Kandy</option>
+                                            </select>
+                                            {{-- <div class="form-control-icon">
+                                                <i class="bi bi-caret-down"></i>
+                                            </div> --}}
+                                        </div>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sex" value="Female" id="male">
-                                        <label class="form-check-label" for="male">Female</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="sex" value="Other" id="male">
-                                        <label class="form-check-label" for="male">Other</label>
-                                    </div>
+
+
                                 </div>
 
-                                <div class="col-md-4">
+                                {{-- <div class="col-md-4">
                                     <label>Email Address</label>
                                 </div>
                                 <div class="col-md-8">
@@ -87,8 +127,42 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+
                                 <div class="col-md-4">
+                                    <label>Transaction Amount</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text"
+                                                class="form-control @error('TransactionAmount') is-invalid @enderror"
+                                                value="{{ old('TransactionAmount') }}" placeholder="Enter Transaction Amount"
+                                                name="TransactionAmount">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-envelope-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>purpose</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group has-icon-left">
+                                        <div class="position-relative">
+                                            <input type="text" class="form-control @error('purpose') is-invalid @enderror" value="{{ old('purpose') }}"
+                                                placeholder="Enter purpose" name="purpose">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person-badge-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                {{-- <div class="col-md-4">
                                     <label>Mobile Number</label>
                                 </div>
                                 <div class="col-md-8">
@@ -101,23 +175,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
-                                <div class="col-md-4">
-                                    <label>Position</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="text" class="form-control @error('position') is-invalid @enderror" value="{{ old('position') }}"
-                                                placeholder="Enter position" name="position">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-person-badge-fill"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
+
+                                {{-- <div class="col-md-4">
                                     <label>Departement</label>
                                 </div>
                                 <div class="col-md-8">
@@ -130,22 +191,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
-                                <div class="col-md-4">
-                                    <label>Salary</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="text" class="form-control @error('salary') is-invalid @enderror" value="{{ old('salary') }}"
-                                                placeholder="Enter salary" name="salary">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-envelope-fill"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
@@ -162,11 +209,11 @@
     <footer>
         <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
+                <p>2024 &copy; Biocash</p>
             </div>
             <div class="float-end">
                 <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
+                href="http://soengsouy.com">Dilshan</a></p>
             </div>
         </div>
     </footer>
