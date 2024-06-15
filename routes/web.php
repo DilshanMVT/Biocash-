@@ -105,6 +105,11 @@ Route::get('/transaction/billpayment', [App\Http\Controllers\TransactionControll
 Route::get('/transaction/transfer', [App\Http\Controllers\TransactionController::class, 'transferConfirm'])->name('transferTransaction');
 Route::get('/transaction/success', [App\Http\Controllers\TransactionController::class, 'successTransfer'])->name('successTransaction');
 
+Route::post('/transaction/interbank_data', [App\Http\Controllers\TransactionController::class, 'interBankTransaction'])->name('interBank.data');
+Route::post('/transaction/otherbank_data', [App\Http\Controllers\TransactionController::class, 'otherBankTransaction'])->name('otherBank.data');
+
+
+
 
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
 
