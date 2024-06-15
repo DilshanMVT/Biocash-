@@ -106,6 +106,12 @@ Route::get('/transaction/transfer', [App\Http\Controllers\TransactionController:
 Route::get('/transaction/success', [App\Http\Controllers\TransactionController::class, 'successTransfer'])->name('successTransaction');
 
 
+
+Route::get('/user/account',[App\Http\Controllers\UserController::class, 'accountDetails'])->name('accountDetails');
+
+
+
+
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
 
 Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
