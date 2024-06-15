@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('status')->nullable();
             $table->string('role_name')->nullable()->default('Normal User');
             $table->string('avatar')->nullable();
+            $table->decimal('cash', 20, 2)->default(0.00);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
