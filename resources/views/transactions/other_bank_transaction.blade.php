@@ -37,7 +37,7 @@
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form form-horizontal" action="{{ route('form/save') }}" method="POST">
+                    <form class="form form-horizontal" action="{{ route('otherBank.data') }}" method="POST">
                         @csrf
                         <div class="form-body">
                             <div class="row">
@@ -59,23 +59,6 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="col-md-4">
-                                    <label>From Account</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="text"
-                                                class="form-control @error('FromAccount') is-invalid @enderror"
-                                                value="{{ old('FromAccount') }}" placeholder="Enter Sender's Account Number"
-                                                id="first-name-icon" name="FromAccount">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-person-check-fill"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-
                                 <div class="col-md-4">
                                     <label>To Account</label>
                                 </div>
@@ -83,9 +66,9 @@
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
                                             <input type="text"
-                                                class="form-control @error('ToAccount') is-invalid @enderror"
-                                                value="{{ old('ToAccount') }}" placeholder="Enter Recipient's Account Number"
-                                                id="first-name-icon" name="ToAccount">
+                                                class="form-control @error('accountNo') is-invalid @enderror"
+                                                value="{{ old('accountNo') }}" placeholder="Enter Recipient's Account Number"
+                                                id="first-name-icon" name="accountNo">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person-check-fill"></i>
                                             </div>
@@ -99,35 +82,15 @@
                                 <div class="col-md-8">
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" name="bank">
                                                 <option selected>Selcet the benificiary bank</option>
                                                 <option value="1">Galle</option>
                                                 <option value="2">Colombo</option>
                                                 <option value="3">Kandy</option>
                                             </select>
-                                            {{-- <div class="form-control-icon">
-                                                <i class="bi bi-caret-down"></i>
-                                            </div> --}}
                                         </div>
                                     </div>
-
-
                                 </div>
-
-                                {{-- <div class="col-md-4">
-                                    <label>Email Address</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="email" class="form-control @error('emailAddress') is-invalid @enderror" value="{{ old('emailAddress') }}"
-                                                placeholder="Enter email" id="first-name-icon" name="emailAddress">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-envelope"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
 
                                 <div class="col-md-4">
                                     <label>Transaction Amount</label>
@@ -136,9 +99,9 @@
                                     <div class="form-group has-icon-left">
                                         <div class="position-relative">
                                             <input type="text"
-                                                class="form-control @error('TransactionAmount') is-invalid @enderror"
-                                                value="{{ old('TransactionAmount') }}" placeholder="Enter Transaction Amount"
-                                                name="TransactionAmount">
+                                                class="form-control @error('ammount') is-invalid @enderror"
+                                                value="{{ old('ammount') }}" placeholder="Enter Transaction Amount"
+                                                name="ammount">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-envelope-fill"></i>
                                             </div>
@@ -160,39 +123,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                {{-- <div class="col-md-4">
-                                    <label>Mobile Number</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="number" class="form-control @error('phone_number') is-invalid @enderror" value="{{ old('phone_number') }}"
-                                                placeholder="Enter phone number" name="phone_number">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-phone"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-
-
-                                {{-- <div class="col-md-4">
-                                    <label>Departement</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-group has-icon-left">
-                                        <div class="position-relative">
-                                            <input type="text" class="form-control @error('department') is-invalid @enderror" value="{{ old('department') }}"
-                                                placeholder="Enter departement" name="department">
-                                            <div class="form-control-icon">
-                                                <i class="bi bi-shop-window"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
-
 
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">Save</button>
