@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-     @extends('sidebar.transaction-sidebar')
+    @extends('sidebar.transaction-sidebar')
 @endsection
 @section('content')
     <div id="main">
@@ -51,7 +51,7 @@
                                             <div class="position-relative">
                                                 <input type="text"
                                                     class="form-control @error('SenderAccountNumber') is-invalid @enderror"
-                                                    value="{{ old('SenderAccountNumber') }}" placeholder=" "
+                                                    value="{{ Auth::user()->account_no }}" placeholder=" "
                                                     id="first-name-icon" name="SenderAccountNumber" readonly>
                                             </div>
                                         </div>
@@ -65,8 +65,8 @@
                                             <div class="position-relative">
                                                 <input type="text"
                                                     class="form-control @error('SenderName') is-invalid @enderror"
-                                                    value="{{ old('SenderName') }}" placeholder=" "
-                                                    id="first-name-icon" name="SenderName" readonly>
+                                                    value="{{ Auth::user()->name }}" placeholder=" " id="first-name-icon"
+                                                    name="SenderName" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -79,8 +79,8 @@
                                             <div class="position-relative">
                                                 <input type="text"
                                                     class="form-control @error('BenificiaryAccountNumber') is-invalid @enderror"
-                                                    value="{{ old('BenificiaryAccountNumber') }}" placeholder=" "
-                                                    id="first-name-icon" name="BenificiaryAccountNumber" readonly>
+                                                    value="{{ $data['accountNo'] }}" placeholder=" " id="first-name-icon"
+                                                    name="BenificiaryAccountNumber" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -93,7 +93,7 @@
                                             <div class="position-relative">
                                                 <input type="text"
                                                     class="form-control @error('BenificiaryName') is-invalid @enderror"
-                                                    value="{{ old('BenificiaryName') }}" placeholder=" "
+                                                    value="{{ $data['BenificiaryName'] }}" placeholder=" "
                                                     id="first-name-icon" name="BenificiaryName" readonly>
                                             </div>
                                         </div>
@@ -107,8 +107,8 @@
                                             <div class="position-relative">
                                                 <input type="text"
                                                     class="form-control @error('TransactionAmount') is-invalid @enderror"
-                                                    value="{{ old('TransactionAmount') }}" placeholder=" "
-                                                    name="BillAmount" readonly>
+                                                    value="{{ $data['ammount'] }}" placeholder=" " name="BillAmount"
+                                                    readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -119,8 +119,9 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="text" class="form-control @error('purpose') is-invalid @enderror" value="{{ old('purpose') }}"
-                                                    placeholder=" " name="purpose" readonly>
+                                                <input type="text"
+                                                    class="form-control @error('purpose') is-invalid @enderror"
+                                                    value="{{ $data['purpose'] }}" placeholder=" " name="purpose" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -131,8 +132,9 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="Date" class="form-control @error('Date') is-invalid @enderror" value="{{ old('Date') }}"
-                                                    placeholder=" " name="Date" readonly>
+                                                <input type="text"
+                                                    class="form-control @error('Date') is-invalid @enderror"
+                                                    value="{{ date('jS l Y') }}" placeholder=" " name="Date" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -143,8 +145,9 @@
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="text" class="form-control @error('OTP') is-invalid @enderror" value="{{ old('OTP') }}"
-                                                    placeholder=" " name="OTP">
+                                                <input type="text"
+                                                    class="form-control @error('OTP') is-invalid @enderror"
+                                                    value="{{ old('OTP') }}" placeholder=" " name="OTP">
                                             </div>
                                         </div>
                                     </div>
