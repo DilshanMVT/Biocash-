@@ -44,66 +44,66 @@
 
                     <div class="card-group">
                         <div class="card">
-
-                          <div class="card-body">
-                            <h5 class="card-title">Account Details</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="card-body" style="text-align: center;">
+                              <h5 class="card-title">Account Details</h5>
+                              <p class="card-text" style="font-size: 24px;">LKR 100000</p>
+                            </div>
                           </div>
 
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Account Balance</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                          <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                              <h5 class="card-title">Account Balance</h5>
+                              <p class="card-text" style="font-size: 24px;">LKR 100000</p>
+                            </div>
                           </div>
 
-                        </div>
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Account Holds</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                          <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                              <h5 class="card-title">Account Holds</h5>
+                              <p class="card-text" style="font-size: 24px;">LKR 100000</p>
+                            </div>
                           </div>
 
-                        </div>
                       </div>
 <br><br>
 
 
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Reason</th>
-                            <th scope="col">Withdrawal</th>
-                            <th scope="col">Deposit</th>
-                            <th scope="col">Balance</th>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Reason</th>
+        <th scope="col" style="width: 10%;">Withdrawal</th>
+        <th scope="col" style="width: 10%;">Deposit</th>
+        <th scope="col" style="width: 10%;">Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark <br><span style="font-size: small;">2024-06-16 11:53:00</span></td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@twitter</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob <br><span style="font-size: small;">2024-06-16 11:53:00</span></td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>@twitter</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird <br><span style="font-size: small;">2024-06-16 11:53:00</span></td>
+        <td>@twitter</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
 
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@twitter</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@twitter</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                          </tr>
 
-                        </tbody>
-                      </table>
+
                 </div>
             </div>
         </div>
