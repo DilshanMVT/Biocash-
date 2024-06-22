@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-    @extends('sidebar.transaction-sidebar')
+    {{-- @extends('sidebar.transaction-sidebar') --}}
 @endsection
 @section('content')
     <div id="main">
@@ -9,6 +9,7 @@
                 <i class="bi bi-justify fs-3"></i>
             </a>
             {{-- \dfxbfrthrt --}}
+
         </header>
         <div class="page-title">
             <div class="row">
@@ -32,71 +33,86 @@
 
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Input Information</h4>
+                <div class="card-header ">
+
+                    <h4 class="card-title">Settings</h4>
                 </div>
+
+
+                <div class="card-header ">
+
+                    <p>If you need to update or modify your account settings, please visit your nearest bank branch. Our representatives will assist you in making any necessary changes to ensure your account information is up to date.</p>
+
+                </div>
+
+
                 <div class="card-content">
                     <div class="card-body">
                         <form class="form form-horizontal" action="{{ route('interBank.data') }}" method="POST">
                             @csrf
                             <div class="form-body">
                                 <div class="row">
+
+
+
                                     <div class="col-md-4">
-                                        <label>Benificiary Name</label>
+                                        <label>Name</label>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="text"
-                                                    class="form-control @error('BenificiaryName') is-invalid @enderror"
-                                                    value="{{ old('BenificiaryName') }}" placeholder="Enter full name"
-                                                    id="first-name-icon" name="BenificiaryName">
-                                                <div class="form-control-icon">
-                                                    <i class="bi bi-person-check-fill"></i>
-                                                </div>
+                                                <input type="text" class="form-control @error('Name') is-invalid @enderror"
+                                                       value="{{ old('Name') }}" placeholder=""
+                                                       id="first-name-icon" name="Name" readonly>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label>To Account</label>
+                                        <label>Account Number</label>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="text"
-                                                    class="form-control @error('account_number') is-invalid @enderror"
-                                                    value="{{ old('account_number') }}"
-                                                    placeholder="Enter Recipient's Account Number" id="first-name-icon"
-                                                    name="account_number">
-                                                <div class="form-control-icon">
-                                                    <i class="bi bi-person-check-fill"></i>
-                                                </div>
+                                                <input type="text" class="form-control @error('AccountNumber') is-invalid @enderror"
+                                                       value="{{ old('AccountNumber') }}" placeholder=""
+                                                       id="first-name-icon" name="AccountNumber" readonly>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label>Transaction Amount</label>
+                                        <label>ID Number</label>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                                <input type="text"
-                                                    class="form-control @error('ammount') is-invalid @enderror"
-                                                    value="{{ old('ammount') }}"
-                                                    placeholder="Enter Transaction Amount" name="ammount">
-                                                <div class="form-control-icon">
-                                                    <i class="bi bi-envelope-fill"></i>
-                                                </div>
+                                                <input type="text" class="form-control @error('IDNumber') is-invalid @enderror"
+                                                       value="{{ old('IDNumber') }}" placeholder=""
+                                                       id="first-name-icon" name="IDNumber" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control @error('IDNumber') is-invalid @enderror"
+                                                       value="{{ old('IDNumber') }}" placeholder=""
+                                                       id="first-name-icon" name="IDNumber" readonly>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Make Transaction</button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">Enroll Your Fingerprint</button>
                                         <button type="reset" class="btn btn-light-secondary me-1 mb-1">Cannel</button>
                                     </div>
+
+
                                 </div>
                             </div>
                         </form>
@@ -117,4 +133,6 @@
             </div>
         </footer>
     </div>
+
+
 @endsection

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\FingerprintController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserManagementController;
@@ -113,13 +114,19 @@ Route::post('/transaction/otherbank_data', [App\Http\Controllers\TransactionCont
 
 
 Route::get('/user/account',[App\Http\Controllers\UserController::class, 'accountDetails'])->name('accountDetails');
-
+Route::get('/user/settings',[App\Http\Controllers\UserController::class,'settings'])->name('settings');
 
 
 
 Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.inquirie');
 
 Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
+
+
+    // // profile
+    // Route::prefix('fringerprint')->group(function () {
+    //     Route::post('/fingerprint', [FingerprintController::class, 'store']);
+    // });
 
 
 

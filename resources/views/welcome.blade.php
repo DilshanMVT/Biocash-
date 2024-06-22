@@ -25,6 +25,7 @@
   <link href="sy/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="sy/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
   <!-- Template Main CSS File -->
   <link href="sy/assets/css/style.css" rel="stylesheet">
 
@@ -710,50 +711,54 @@
             </div>
 
           </div>
+<!-- ======= inquire Section ======= -->
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" style="background-color: rgb(238, 242, 247); padding: 20px;">
+            <div class="card"style="background-color: #FFFFFF; padding: 60px;">
+                <div class="card-header" style="text-align: center;">
+                    <h4 class="card-title">Inquiries</h4>
+                  </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="{{ route('add.inquirie')}}" method="post">
-                @csrf
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                  @error('name')
-                            <div class="invalid-feedback d-block">{{ $message }}</div>
+
+              <div class="card-body">
+                <form action="{{ route('add.inquirie') }}" method="post">
+                  @csrf
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="name">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="name" required>
+                      @error('name')
+                        <div class="invalid-feedback d-block">{{ $message }}</div>
                       @enderror
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email"  id="email" required>
-                  @error('email')
-                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="email">Your Email</label>
+                      <input type="email" class="form-control" name="email" id="email" required>
+                      @error('email')
+                        <div class="invalid-feedback d-block">{{ $message }}</div>
                       @enderror
-                </div>
+                    </div>
+                  </div><br>
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                    @error('subject')
+                      <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
+                  </div><br>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" rows="10" required></textarea>
+                    @error('message')
+                      <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
+                    <br>
+                  </div>
+                  <div class="text-center"><button type="submit" class="btn btn-primary">Send Message</button></div>
+                </form>
               </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-                @error('subject')
-                            <div class="invalid-feedback d-block">{{ $message }}</div>
-                      @enderror
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-                @error('message')
-                            <div class="invalid-feedback d-block">{{ $message }}</div>
-                      @enderror
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+            </div>
           </div>
 
-        </div>
 
       </div>
     </section><!-- End Contact Section -->

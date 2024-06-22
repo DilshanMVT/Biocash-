@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-     {{-- @extends('sidebar.user-sidebar') --}}
+    @extends('sidebar.transaction-sidebar')
 @endsection
 @section('content')
     <div id="main">
@@ -9,7 +9,7 @@
                 <i class="bi bi-justify fs-3"></i>
             </a>
             {{-- \dfxbfrthrt --}}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+            {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
 
 
 
@@ -36,7 +36,7 @@
 
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header text-center">
                     <h4 class="card-title">Account Information</h4>
                 </div>
                 <div class="card-content">

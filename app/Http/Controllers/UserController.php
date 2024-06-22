@@ -10,6 +10,8 @@ class UserController extends Controller
         return view('user.account_details');
     }
 
-
+    public function settings(){
+        return view('user.settings');
+    }
 
 }
