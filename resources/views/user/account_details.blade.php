@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('menu')
-    @extends('sidebar.transaction-sidebar')
+    @extends('sidebar.account-history')
 @endsection
 @section('content')
     <div id="main">
