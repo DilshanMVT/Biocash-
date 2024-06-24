@@ -45,62 +45,67 @@
                     <div class="card-group">
                         <div class="card">
                             <div class="card-body" style="text-align: center;">
-                              <h5 class="card-title">Account Details</h5>
-                              <p class="card-text" style="font-size: 24px;">LKR 100000</p>
+                                <h5 class="card-title">Account Details</h5>
+                                <p class="card-text" style="font-size: 24px;">{{ Auth::user()->account_no }}</p>
                             </div>
-                          </div>
+                        </div>
 
-                          <div class="card">
+                        <div class="card">
                             <div class="card-body" style="text-align: center;">
-                              <h5 class="card-title">Account Balance</h5>
-                              <p class="card-text" style="font-size: 24px;">LKR 100000</p>
+                                <h5 class="card-title">Account Balance</h5>
+                                <p class="card-text" style="font-size: 24px;">LKR {{ Auth::user()->cash }}</p>
                             </div>
-                          </div>
+                        </div>
 
-                          <div class="card">
+                        <div class="card">
                             <div class="card-body" style="text-align: center;">
-                              <h5 class="card-title">Account Holds</h5>
-                              <p class="card-text" style="font-size: 24px;">LKR 100000</p>
+                                <h5 class="card-title">Account Holds</h5>
+                                <p class="card-text" style="font-size: 24px;">LKR 000.00</p>
                             </div>
-                          </div>
+                        </div>
 
-                      </div>
-<br><br>
+                    </div>
+                    <br><br>
 
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Reason</th>
-        <th scope="col" style="width: 10%;">Withdrawal</th>
-        <th scope="col" style="width: 10%;">Deposit</th>
-        <th scope="col" style="width: 10%;">Balance</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark <br><span style="font-size: small;">2024-06-16 11:53:00</span></td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@twitter</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob <br><span style="font-size: small;">2024-06-16 11:53:00</span></td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>@twitter</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird <br><span style="font-size: small;">2024-06-16 11:53:00</span></td>
-        <td>@twitter</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Reason</th>
+                                <th scope="col" style="width: 10%;">Withdrawal</th>
+                                <th scope="col" style="width: 10%;">Deposit</th>
+                                <th scope="col" style="width: 10%;">Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($transactions as $transaction)
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>{{ $transaction->description }} <br><span
+                                            style="font-size: small;">{{ $transaction->created_at }}</span></td>
+                                    @if ($transaction->depositor_id == Auth::user()->id)
+                                        <td>{{ $transaction->amount }}</td>
+                                    @else
+                                        <td>-</td>
+                                    @endif
+
+                                    @if ($transaction->withdrawer_id == Auth::user()->id)
+                                        <td>{{ $transaction->amount }}</td>
+                                    @else
+                                        <td>-</td>
+                                    @endif
+                                    <td>{{ $transaction->complete }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <th scope="row">#</th>
+                                    <td>No records </td>
+
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
 
 
 
@@ -121,4 +126,3 @@
         </footer>
     </div>
 @endsection
-
