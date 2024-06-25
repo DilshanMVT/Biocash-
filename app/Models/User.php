@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'nic',
         'account_no',
+        'cash',
     ];
 
     /**

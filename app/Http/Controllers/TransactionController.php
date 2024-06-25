@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\CoreHelper;
+use App\Models\Transaction;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
@@ -53,6 +55,7 @@ class TransactionController extends Controller
                     'ammount' => $request->ammount,
                     'bank' => 'Same bank',
                     'purpose' => 'Money transer',
+                    'category' => 1,
                 ];
 
                 return view('transactions.transfer_confirm', ['data' => $data]);
@@ -75,6 +78,7 @@ class TransactionController extends Controller
             'ammount' => 'required|min:3',
             'bank' => 'required',
             'purpose' => 'required',
+
         ]);
 
 
@@ -85,6 +89,7 @@ class TransactionController extends Controller
                 'ammount' => $request->ammount,
                 'bank' => $request->bank,
                 'purpose' => $request->purpose,
+                'category' => 2,
             ];
 
             return view('transactions.transfer_confirm', ['data' => $data]);
@@ -95,5 +100,31 @@ class TransactionController extends Controller
 
     }
 
+    public function makeTransaction(Request $request)
+    {
+        $withdrawer = User::where('account_no', $request->BenificiaryAccountNumber)->first();
+        $depositor = User::findOrFail(Auth::id());
+
+        $depositor->update([
+            'cash' => $depositor->cash - ($request->BillAmount + 30),
+        ]);
+
+        $transactionData = [
+            'depositor_id' => Auth::id(),
+            'description' => $request->purpose . ' ' . $request->BenificiaryName,
+            'category' => 1,
+            'amount' => $request->BillAmount + 30,
+            'charges' => 30,
+            'complete' => true,
+        ];
+
+        if ($withdrawer) {
+            $transactionData['withdrawer_id'] = $withdrawer->id;
+        }
+
+        Transaction::create($transactionData);
+
+        return view('transactions.success_transfer');
+    }
 
 }

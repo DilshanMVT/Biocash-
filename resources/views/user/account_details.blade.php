@@ -75,13 +75,15 @@
                                 <th scope="col">Reason</th>
                                 <th scope="col" style="width: 10%;">Withdrawal</th>
                                 <th scope="col" style="width: 10%;">Deposit</th>
-                                <th scope="col" style="width: 10%;">Balance</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $count = 1;
+                            @endphp
                             @forelse ($transactions as $transaction)
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <th scope="row">{{ $count++ }}</th>
                                     <td>{{ $transaction->description }} <br><span
                                             style="font-size: small;">{{ $transaction->created_at }}</span></td>
                                     @if ($transaction->depositor_id == Auth::user()->id)
@@ -95,7 +97,6 @@
                                     @else
                                         <td>-</td>
                                     @endif
-                                    <td>{{ $transaction->complete }}</td>
                                 </tr>
                             @empty
                                 <tr>

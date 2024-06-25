@@ -93,7 +93,7 @@ Route::post('change/password/db', [App\Http\Controllers\UserManagementController
 
 // ----------------------------- form staff ------------------------------//
 Route::get('form/staff/new', [App\Http\Controllers\FormController::class, 'index'])->middleware('auth')->name('form/staff/new');
-Route::post('form/save', [App\Http\Controllers\FormController::class, 'saveRecord'])->name('form/save');
+Route::post('form/save', [App\Http\Controllers\FormController::class, 'saveRec ord'])->name('form/save');
 Route::get('form/view/detail', [App\Http\Controllers\FormController::class, 'viewRecord'])->middleware('auth')->name('form/view/detail');
 Route::get('form/view/detail/{id}', [App\Http\Controllers\FormController::class, 'viewDetail'])->middleware('auth');
 Route::post('form/view/update', [App\Http\Controllers\FormController::class, 'viewUpdate'])->name('form/view/update');
@@ -113,8 +113,11 @@ Route::post('/transaction/otherbank_data', [App\Http\Controllers\TransactionCont
 
 
 
-Route::get('/user/account',[App\Http\Controllers\UserController::class, 'accountDetails'])->name('accountDetails');
-Route::get('/user/settings',[App\Http\Controllers\UserController::class,'settings'])->name('settings');
+Route::get('/user/account', [App\Http\Controllers\UserController::class, 'accountDetails'])->name('accountDetails');
+Route::get('/user/settings', [App\Http\Controllers\UserController::class, 'settings'])->name('settings');
+
+
+Route::post('/transaction/confirmation', [App\Http\Controllers\TransactionController::class, 'makeTransaction'])->name('makeTransaction.data');
 
 
 
@@ -123,10 +126,10 @@ Route::post('inquirie_data', [AdminController::class, 'addInquiri'])->name('add.
 Route::get('test', [AdminController::class, 'viewInquirie'])->name('test');
 
 
-    // // profile
-    // Route::prefix('fringerprint')->group(function () {
-    //     Route::post('/fingerprint', [FingerprintController::class, 'store']);
-    // });
+// // profile
+// Route::prefix('fringerprint')->group(function () {
+//     Route::post('/fingerprint', [FingerprintController::class, 'store']);
+// });
 
 
 
